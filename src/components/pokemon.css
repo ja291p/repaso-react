@@ -1,0 +1,15 @@
+.pokemones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pokemon {
+  width: 300px;
+  margin: 30px;
+  border: 1px solid lightgray;
+}
+
+.pokemon img {
+  width: 100%;
+}

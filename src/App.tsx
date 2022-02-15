@@ -1,11 +1,11 @@
+import { MirchaFetch } from "./components/MirchaFetch";
 import "./App.css";
-import { CRGAxios } from "./components/CRGAxios";
 import "./estilo.css";
 
 function App() {
   return (
     <>
-      <CRGAxios />
+      <MirchaFetch />
     </>
   );
 }
