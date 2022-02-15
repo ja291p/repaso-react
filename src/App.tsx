@@ -1,10 +1,11 @@
 import "./App.css";
+import { CRGAxios } from "./components/CRGAxios";
 import "./estilo.css";
 
 function App() {
   return (
     <>
-      <h1>Hola mundo</h1>
+      <CRGAxios />
     </>
   );
 }
