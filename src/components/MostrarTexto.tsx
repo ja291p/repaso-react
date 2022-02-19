@@ -1,7 +1,11 @@
 import React from "react";
 
 export const MostrarTexto = ({ texto }: mostrarTextoProps) => {
-  return <div>{texto}</div>;
+  return <h3>{texto}</h3>;
+};
+
+MostrarTexto.defaultProps = {
+  texto: "valor por defecto",
 };
 
 interface mostrarTextoProps {

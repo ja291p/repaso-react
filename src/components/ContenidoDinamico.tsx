@@ -1,19 +1,17 @@
 import React from "react";
 
-const ContenidoDinamico = ({
+export const ContenidoDinamico = ({
   nombre,
   calificacion,
 }: contenidoDinamicoProps) => {
   if (calificacion > 90) {
-    return <h3>{nombre}: Excelente calificación</h3>;
+    return <h2>{nombre}: Excelente calificación</h2>;
   } else if (calificacion >= 80 && calificacion <= 90) {
-    return <h3>{nombre}: Muy bien hecho</h3>;
+    return <h2>{nombre}: Muy bien hecho</h2>;
   } else {
-    return <h3>{nombre}: lol... </h3>;
+    return <h2>{nombre}: lol...</h2>;
   }
 };
-
-export default ContenidoDinamico;
 
 interface contenidoDinamicoProps {
   nombre: string;

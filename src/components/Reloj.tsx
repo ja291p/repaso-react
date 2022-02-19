@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 
 export const Reloj = () => {
-  const [date, setDate] = useState(new Date());
+  const [fecha, setFecha] = useState(new Date());
   useEffect(() => {
     const timerID = setInterval(() => {
-      setDate(new Date());
+      setFecha(new Date());
     }, 1000);
 
     return () => {
@@ -12,5 +12,5 @@ export const Reloj = () => {
     };
   }, []);
 
-  return <div>{date.toString()}</div>;
+  return <p>${fecha.toString()}</p>;
 };

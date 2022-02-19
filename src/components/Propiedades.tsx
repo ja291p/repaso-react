@@ -1,25 +1,33 @@
 import React, { ReactElement } from "react";
-import { Reloj } from "./Reloj";
+import { MostrarTexto } from "./MostrarTexto";
 
-const Propiedades = (props: propiedadesProps) => {
+export const Propiedades = (props: propiedadesProps) => {
   return (
     <div>
       <h1>Propiedades</h1>
       <ul>
         <li>{props.cadena}</li>
         <li>{props.numero}</li>
-        <li>{JSON.stringify(props.booleano)}</li>
+        <li>{props.booleano.toString()}</li>
         <li>{props.arreglo.join(", ")}</li>
         <li>{props.objeto.curso + " - " + props.objeto.donde}</li>
         <li>{props.arreglo.map(props.funcion).join(", ")}</li>
         <li>{props.elementoReact}</li>
-        <li>{props.componenteReact ? props.componenteReact : <Reloj />}</li>
+        <li>
+          {props.componenteReact ? (
+            props.componenteReact
+          ) : (
+            <MostrarTexto texto="No se ha pasado ningún componente" />
+          )}
+        </li>
       </ul>
     </div>
   );
 };
 
-export default Propiedades;
+Propiedades.defaultProps = {
+  elementoReact: <i>valor por defecto</i>,
+};
 
 interface propiedadesProps {
   cadena: string;
@@ -31,7 +39,3 @@ interface propiedadesProps {
   elementoReact: ReactElement;
   componenteReact?: ReactElement;
 }
-
-Propiedades.defaultProps = {
-  elementoReact: <i>valor por defecto</i>,
-};
