@@ -2,12 +2,15 @@ import React from "react";
 
 export const FormularioTexto = ({ manejadorKeyUp }: formularioTextoProps) => {
   return (
-    <div>
-      <input onKeyUp={(e) => manejadorKeyUp(e.currentTarget.value)} />
-    </div>
+    <input
+      type="text"
+      onKeyUp={(e: React.KeyboardEvent<HTMLInputElement>) =>
+        manejadorKeyUp(e.currentTarget.value)
+      }
+    />
   );
 };
 
 interface formularioTextoProps {
-  manejadorKeyUp(texto: string): void;
+  manejadorKeyUp(txt: string): void;
 }

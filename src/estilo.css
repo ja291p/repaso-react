@@ -35,3 +35,8 @@ input {
 .card img {
   max-height: 170px;
 }
+
+.botonera button {
+  margin-right: 5px;
+  margin-bottom: 20px;
+}
