@@ -1,17 +1,17 @@
 import { useState } from "react";
-import { Botonera } from "./components/Botonera";
-import { GridPokemon } from "./components/GridPokemon";
+import { AddCategory } from "./components/AddCategory";
+import { GifGrid } from "./components/GifGrid";
 import "./estilo.css";
 
 function App() {
-  const limit = 20;
-  const [offset, setOffset] = useState(0);
+  const [categories, setCategories] = useState<string[]>([]);
 
   return (
     <>
-      <h1>Pokemons</h1>
-      <Botonera limit={limit} setOffset={setOffset} />
-      <GridPokemon limit={limit} offset={offset} />
+      <AddCategory setCategories={setCategories} />
+      {categories.map((category) => (
+        <GifGrid key={category} category={category} />
+      ))}
     </>
   );
 }
